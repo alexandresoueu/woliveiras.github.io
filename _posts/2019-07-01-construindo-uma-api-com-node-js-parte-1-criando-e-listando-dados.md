@@ -425,6 +425,7 @@ Primeiro nós usamos o mongoose para criar uma conexão com a connection string 
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
     useNewUrlParser: true,
     useFindAndModify: true,
+    useUnifiedTopology: true,
     useCreateIndex: true
 });
 ```
@@ -654,7 +655,10 @@ app.use(express.urlencoded({extended: true}));
 
 // Database
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useFindAndModify: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 const db = mongoose.connection;
